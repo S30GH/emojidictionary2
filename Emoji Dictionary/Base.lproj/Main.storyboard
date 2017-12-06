@@ -56,8 +56,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a lovely chuch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-By-iC9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a lovely chuch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-By-iC9">
                                 <rect key="frame" x="106" y="393" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Smiley" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zY-Fg-4SX">
+                                <rect key="frame" x="122.5" y="434" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BirthYear: 2010" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kr-Ko-6Nd">
+                                <rect key="frame" x="129" y="475" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,12 +78,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5xt-By-iC9" firstAttribute="top" secondItem="78v-W4-bKT" secondAttribute="bottom" constant="50" id="19q-na-8uJ"/>
+                            <constraint firstItem="1Kr-Ko-6Nd" firstAttribute="top" secondItem="6zY-Fg-4SX" secondAttribute="bottom" constant="20" id="EC0-gY-dII"/>
                             <constraint firstItem="78v-W4-bKT" firstAttribute="centerX" secondItem="2hU-8C-AbS" secondAttribute="centerX" id="FWU-jR-vKw"/>
+                            <constraint firstItem="6zY-Fg-4SX" firstAttribute="centerX" secondItem="2hU-8C-AbS" secondAttribute="centerX" id="Ipf-I8-I94"/>
+                            <constraint firstItem="6zY-Fg-4SX" firstAttribute="top" secondItem="5xt-By-iC9" secondAttribute="bottom" constant="20" id="Qzv-8G-WNt"/>
                             <constraint firstItem="78v-W4-bKT" firstAttribute="top" secondItem="dsf-UN-Ly6" secondAttribute="top" constant="40" id="Rzw-y5-waQ"/>
                             <constraint firstItem="5xt-By-iC9" firstAttribute="centerX" secondItem="2hU-8C-AbS" secondAttribute="centerX" id="oDR-uq-Zao"/>
+                            <constraint firstItem="1Kr-Ko-6Nd" firstAttribute="centerX" secondItem="2hU-8C-AbS" secondAttribute="centerX" id="yF7-nn-3FC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dsf-UN-Ly6"/>
                     </view>
+                    <connections>
+                        <outlet property="birthyearLabel" destination="1Kr-Ko-6Nd" id="fmX-xL-w0o"/>
+                        <outlet property="categoryLabel" destination="6zY-Fg-4SX" id="Fd2-2H-Ols"/>
+                        <outlet property="definitionLabel" destination="5xt-By-iC9" id="70N-Wf-cFo"/>
+                        <outlet property="emojiLabel" destination="78v-W4-bKT" id="pSc-bb-d30"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0j-wK-ZGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

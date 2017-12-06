@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var theTableviewOfEmoji: UITableView!
     
-    var emojis = ["😀","😎","😳","👊"]
+    var emojis : [Emoji] = []
     // Emojis ctrl + cmd + space
     
     override func viewDidLoad() {
@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         theTableviewOfEmoji.dataSource = self
         theTableviewOfEmoji.delegate = self
+        emojis = makeEmojiArray()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,8 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.deselectRow(at: indexPath, animated: true)
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
     }
     
@@ -41,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let defVC = segue.destination as! DefinitionViewController
-    defVC.emoji = sender as! String
+    defVC.emoji = sender as! Emoji
     
     }
     
@@ -50,6 +53,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArray() -> [Emoji] {
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "😀"
+        emoji1.birthYear = 2000
+        emoji1.category = "Smiley"
+        emoji1.definition = "flinande ansikte"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "😎"
+        emoji2.birthYear = 2001
+        emoji2.category = "Smiley"
+        emoji2.definition = "leende ansikte med solglasögon"
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "🐹"
+        emoji3.birthYear = 2010
+        emoji3.category = "Smiley"
+        emoji3.definition = "hamsteransikte"
+
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "👊"
+        emoji4.birthYear = 2002
+        emoji4.category = "Smiley"
+        emoji4.definition = "knuten näve"
+
+        return [emoji1, emoji2, emoji3, emoji4]
+    }
 
 }
 
